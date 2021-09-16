@@ -1,0 +1,9 @@
+.bar{
+    margin-bottom: 10px;
+}
+.bar {
+    margin-right: 10px;
+}
+.bar > input {
+    border: none !important;
+}
