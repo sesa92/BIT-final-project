@@ -1,13 +1,13 @@
 import { React, Fragment } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
 import { SearchField } from "../SearchField/SearchField";
 import "./candidate.css";
 
-const CandidatesUI = ({ candidates, value, search }) => {
-    const filterUser = (users, val) => {
+const Card = ({ candidates,search, value }) => {
 
+    const filterUser = (users, val) => {
         return users.filter(user => {
          if(val === ""){
            return user
@@ -53,7 +53,6 @@ const CandidatesUI = ({ candidates, value, search }) => {
                       roundedCircle
                       className="p-5"
                     />
-
                     <Card.Body>
                       <Card.Title className="mb-3">{candidate.name}</Card.Title>
                       <Card.Text>{candidate.email}</Card.Text>
@@ -68,4 +67,4 @@ const CandidatesUI = ({ candidates, value, search }) => {
   );
 };
 
-export default CandidatesUI;
+export { Card };
