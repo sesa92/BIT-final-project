@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import React from 'react';
 import './Login.css';
@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
 
         let response = await fetch(url, requestOptions);
         let token = await response.json();
-        localStorage.setItem("token", token.accessToken);
+        sessionStorage.setItem("token", token.accessToken);
         this.props.history.push('./');
     }
 
@@ -58,9 +58,9 @@ class LoginForm extends React.Component {
                     <input className="username" type="text" value={this.state.email} onChange={this.emailHandler} placeholder="Email" />
                     <input className="pasword" type="password" value={this.state.password} onChange={this.passwordHandler} placeholder="password" />
                     <button className="btn" type="submit" onClick={this.submitHandler}>Login</button>
-                    <Link to="/">
+                    {/* <Link to="/">
                         <button>Interview reports</button>
-                    </Link>
+                    </Link> */}
                 </div>
                 <Footer />
             </div>

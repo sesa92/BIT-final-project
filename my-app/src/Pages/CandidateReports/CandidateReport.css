@@ -4,7 +4,7 @@
     flex-direction: column;
     margin: 10px;
     padding: 20px 10px;
-    background-color: white;
+    background-color: teal;
 }
 
 .candidateInfo {
@@ -20,6 +20,7 @@ p {
 input {
     border-color: white;
     font-size: 25px;
+    border-radius: 5px;;
 }
 
 .nameEmail {

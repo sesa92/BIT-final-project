@@ -9,10 +9,10 @@ import './App.css';
 
 function App() {
   let history = useHistory();
-  if (!localStorage.getItem("token")) {
+  if (!sessionStorage.getItem("token")) {
     history.push("/login");
   } else {
-    history.push('/');
+    // history.push('/');
   }
 
   return (
