@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 import ModalPage from '../ModalPage/ModalPage';
 
 
-function ReportPage (){
+function ReportPage ({candidate, reports}){
     const image = "https://image.freepik.com/free-photo/studio-portrait-successful-young-businesswoman_1262-5844.jpg";
     const dateFormatter = (date) => {
         let data = new Date(date);
@@ -39,8 +39,7 @@ function ReportPage (){
                     </tr>
                 </thead>
                 <tbody>
-                    {getReports.map((e, id) => {
-
+                    {reports.map((e, id) => {
                         return (
                             <tr>
                                 <td>{e.companyName}</td>

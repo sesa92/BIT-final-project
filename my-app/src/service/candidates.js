@@ -1,14 +1,23 @@
 
 
 export const candidates = async (token) => {
-    const response = await fetch ("http://localhost:3333/660/api/candidates", {
+    const response = await fetch("http://localhost:3333/api/candidates", {
         headers: {
             "Content-Type": "application/json",
-            Accept: "application/json",
-            Autorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`,
         },
     });
     const candidates = await response.json();
     return candidates;
 }
-console.log(candidates);
+
+export const getSingleCandidate = async (token, id) => {
+    const response = await fetch(`http://localhost:3333/api/candidates/${id}`, {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+    });
+    const candidate = await response.json();
+    return candidate;
+}

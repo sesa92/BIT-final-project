@@ -4,7 +4,7 @@ export const reports = async (token) => {
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
-            Autorization: `Bearer ${token}`,
+            Authorization: `Bearer ${token}`,
         },
     });
     const reports = await response.json();

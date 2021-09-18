@@ -5,6 +5,7 @@ import LoginForm from './Pages/Login/Login';
 import { Candidates } from "./Pages/Candidates/Candidates";
 
 import './App.css';
+import CandidateReport from './Pages/CandidateReports/CandidateReport';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   if (!sessionStorage.getItem("token")) {
     history.push("/login");
   } else {
-    // history.push('/');
+    history.push('/');
   }
 
   return (
@@ -20,8 +21,11 @@ function App() {
       <Route exact path='/login'>
         <LoginForm />
       </Route>
-      <Route path="/">
+      <Route exact path="/">
         <Candidates />
+      </Route>
+      <Route exact path="/candidate-report/:id">
+        <CandidateReport />
       </Route>
     </Switch>
   );
