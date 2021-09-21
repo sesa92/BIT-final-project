@@ -1,5 +1,5 @@
-export const reports = async (token) => {
-    const response = await fetch("http://localhost:3333/660/api/reports", {
+export default serviceReports = async (token) => {
+    const response = await fetch("http://localhost:3333/api/reports", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

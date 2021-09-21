@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import React from 'react';
-import './Login.css';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Header from '../../Header/Header';
+import Footer from '../../Footer/Footer';
 import { withRouter } from 'react-router-dom';
-
-class LoginForm extends React.Component {
+import "./Login.css";
+class Login extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,6 +13,7 @@ class LoginForm extends React.Component {
         }
         this.submitHandler = this.submitHandler.bind(this);
         this.loginUser = this.loginUser.bind(this);
+
     }
     emailHandler = (event) => {
         this.setState({
@@ -45,8 +45,10 @@ class LoginForm extends React.Component {
 
         let response = await fetch(url, requestOptions);
         let token = await response.json();
+
+        console.log("from login", token);
         sessionStorage.setItem("token", token.accessToken);
-        this.props.history.push('./');
+        this.props.history.push('./home');
     }
 
     render() {
@@ -57,10 +59,10 @@ class LoginForm extends React.Component {
                     <input className="username" type="text" value={this.state.email} onChange={this.emailHandler} placeholder="Email" />
                     <input className="pasword" type="password" value={this.state.password} onChange={this.passwordHandler} placeholder="password" />
                     <button className="btn" type="submit" onClick={this.submitHandler}>Login</button>
-                    <Link to="/">
+                </div>
+                <Link to="/">
                         <button>Interview reports</button>
                     </Link>
-                </div>
                 <Footer />
             </div>
         )
@@ -68,4 +70,4 @@ class LoginForm extends React.Component {
 
 }
 
-export default withRouter(LoginForm);
+export default withRouter(Login);

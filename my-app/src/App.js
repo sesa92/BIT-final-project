@@ -1,58 +1,47 @@
 import { React, Fragment, useState  } from "react";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+//import Footer from "./components/Footer/Footer";
+//import Header from "./components/Header/Header";
 import Home from "./components/Pages/Home/Home";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Login from "./src/pages/Login/Login.js"
-import { loginUser } from "./components/Pages/Login"
+import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import  Login  from "./components/Pages/Login/Login"
+
 
 const App = () => {
+  // let history = useHistory();
+  //   if (!sessionStorage.getItem("token")) {
+  //    history.push("/login");
+  //  } else {
+  //    history.push('/home');
+  // }
   const [token, setToken] = useState(sessionStorage.getItem("token"));
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const onChangingEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const onChangingPassword = (e) => {
-    setPassword(e.target.value);
-  };
-  const submit = (e) => {
-    const token = async () => {
-      const data = await loginUser(email, password);
-      sessionStorage.setItem("token", data.accessToken);
-      setToken(data.accessToken);
-     
-    };
-    token();
-    setEmail("");
-    setPassword("");
-    e.preventDefault(); 
-  };
+  
 
-  if (!token === "undefined") {
+  //if (!token === "undefined") {
     return (
-      <Fragment>
-        <Login
-         submit={submit}
-         email={email}
-         password={password}
-         onChangeEmail={onChangingEmail}
-         onChangePassword={onChangingPassword}
-         />
-      </Fragment>
+      <BrowserRouter>
+      <Switch>
+      <Route exact path='/login'>
+        <Login />
+      </Route>
+      <Route path="/home">
+        <Home />
+      </Route>
+    </Switch>
+    </BrowserRouter>
     );
   }
-  return (
-    <BrowserRouter>
-      <Fragment>
-        <Header/>
-        <Switch>
-          <Route exact path={"/"} component={Home} />
-        </Switch>
-        <Footer />
-      </Fragment>
-    </BrowserRouter>
-  );
-};
+  // return (
+  //   <BrowserRouter>
+  //     <Fragment>
+  //       <Header/>
+  //       <Switch>
+  //         {/* <Route exact path={"/home"} component={Home} /> */}
+  //         {/* <Route exact path={"/"} component={Home} /> */}
+  //       </Switch>
+  //       <Footer />
+  //     </Fragment>
+  //   </BrowserRouter>
+  // );
+//};
 
 export default App;
