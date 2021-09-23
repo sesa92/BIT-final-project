@@ -18,8 +18,10 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .right {
+    background-color: teal;
     color:white;
     font-size: 25px;
+    margin: auto 20px;
    
 }
 li {

@@ -1,0 +1,33 @@
+
+.completeReport {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px 10px;
+    background-color: teal;
+}
+
+.candidateInfo {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:35%;
+}
+p {
+    color: rgba(219, 201, 161, 0.377);
+    font-size: 15px;
+}
+input {
+    border-color: white;
+    font-size: 25px;
+    border-radius: 5px;;
+}
+
+.nameEmail {
+    display: flex;
+    flex-direction: column;
+}
+.birthEducation {
+    display: flex;
+    flex-direction: column;
+}
