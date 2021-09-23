@@ -1,9 +1,8 @@
 import { React, useState } from "react";
-//import Footer from "./components/Footer/Footer";
-//import Header from "./components/Header/Header";
 import Home from "./components/Pages/Home/Home";
 import { Route, Switch, useHistory } from "react-router-dom";
 import Login from "./components/Pages/Login/Login";
+import CandidateReport from "./Pages/CandidateReports/CandidateReport";
 
 const App = () => {
   const [token] = useState(sessionStorage.getItem("token"));
@@ -23,21 +22,11 @@ const App = () => {
         <Route path="/home">
           <Home />
         </Route>
+        <Route path="/candidate-report/:id">
+          <CandidateReport />
+        </Route>
       </Switch>
   );
 };
-// return (
-//   <BrowserRouter>
-//     <Fragment>
-//       <Header/>
-//       <Switch>
-//         {/* <Route exact path={"/home"} component={Home} /> */}
-//         {/* <Route exact path={"/"} component={Home} /> */}
-//       </Switch>
-//       <Footer />
-//     </Fragment>
-//   </BrowserRouter>
-// );
-//};
 
 export default App;

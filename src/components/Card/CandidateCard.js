@@ -9,14 +9,7 @@ export default function CandidateCard(props) {
   return (
     <div className="container">
       <div className="card text-center scale pt-2 mb-2">
-        <Link
-          to={{
-            pathname: `candidate-report/${id}`,
-            state: {
-              candidate: props.candidate,
-            },
-          }}
-        >
+        <Link to={`candidate-report/${id}`}>
           <img className="card-img" src={avatar} alt="" />
           <h4 className="card-text color-dark my-2"> {name} </h4>
           <p className="text-muted"> {email} </p>

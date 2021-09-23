@@ -1,13 +1,10 @@
 import React from 'react';
 
 import { Row, Col} from 'react-bootstrap';
-import { candidates } from '../../service/candidates';
-import { companies } from '../../service/companies';
-import { reports } from '../../service/reports';
 
 
 
-function ModalPage (){
+function ModalPage ({report, onClose}){
     return (
         <container>
             <h2>{candidates.name}</h2>
