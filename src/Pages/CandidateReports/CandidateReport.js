@@ -14,7 +14,7 @@ import "./CandidateReport.css";
 
 function CandidateReport() {
     const params = useParams();
-    const id = params.id;
+    const id = parseInt(params.id);
     const token = sessionStorage.getItem('token');
     const [candidate, setCandidate] = useState(null);
     const [candidateReports, setCandidateReports] = useState([]);
@@ -31,6 +31,7 @@ function CandidateReport() {
         const get = async () => {
             const newReports = await reports(token);
             const filtered = [];
+            console.log(typeof id);
             newReports.forEach((report) => {
                 if (report.candidateId === id) {
                     filtered.push(report);
@@ -42,17 +43,19 @@ function CandidateReport() {
         get();
 
     }
-    
+
     useEffect(getCandidate, []);
     useEffect(getReports, [candidate]);
 
-    if(!candidate || reports.length === 0) {
+    if (!candidate || reports.length === 0) {
         return <h1>Loading...</h1>
     }
+
+    console.log(candidate, candidateReports);
     return (
         <div>
             <Header title="Interview Reports" showItems={true} />
-            <ReportPage candidate={candidate} reports={candidateReports} />
+                <ReportPage candidate={candidate} reports={candidateReports} />
             <Footer />
 
         </div>
