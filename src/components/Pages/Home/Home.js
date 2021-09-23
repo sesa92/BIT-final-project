@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Header from "../../Header/Header.js";
 import Footer from "../../Footer/Footer";
-import serviceCandidates from "../../../service/serviceCandidates.js";
-//import CandidateCard from "../../Card/CandidateCard";
+import serviceCandidates  from "../../../service/serviceCandidates.js";
+import CandidatePage from "../../CandidatePage/CandidatePage";
 import "./Home.css";
 
 function Home() {
@@ -12,23 +12,22 @@ function Home() {
  
   const onGetCandidates = () => {
     const get = async () => {
-      const onGetCandidates = await serviceCandidates(token);
-      setCandidates(onGetCandidates);
+      const getCandidates = await serviceCandidates(token);
+      setCandidates(getCandidates);
     };
     get();
 }
-
-
   useEffect(() => {
     onGetCandidates();
   }, []);
 
-  console.log(candidates);
+  console.log(token, candidates);
+  
 
   return(
     <Fragment>
-      <Header title="Interview reports" showItems={true}/>
-        {/* <CandidateCard candidates={candidates} /> */}
+      <Header title="Interview reports" showItems={true} />
+      <CandidatePage candidates={candidates} />
       <Footer />
     </Fragment>
   );
