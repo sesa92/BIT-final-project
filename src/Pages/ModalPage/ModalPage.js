@@ -1,31 +1,45 @@
 import React from 'react';
 
-import { Row, Col} from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 
 
-function ModalPage ({report, onClose}){
+
+function ModalPage({ report, onClose }) {
     return (
-        <container>
-            <h2>{candidates.name}</h2>
-            <hr></hr>
-            <Row>
-                <Col>
-                    <p>Company</p>
-                    <p>{companies.name}</p>
-                    <p>Interview Date</p>
-                    <p></p>
-                    <p>Phase</p>
-                    <p>{reports.phase}</p>
-                    <p>Status</p>
-                    <p>{reports.status}</p>
-                </Col>
-                <Col>
-                    <p>Notes</p>
-                    <p>{reports.note}</p>
-                </Col>
-            </Row>
-        </container>
+        <div className="modal" tabindex="-1" role="dialog">
+            <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                    <div className="modal-header"></div>
+                    <h5 className="modal-title">{report.candidateName}</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <Col>
+                        <Row>
+                            <p>Company</p>
+                            <p>{report.companyName}</p>
+                            <p>Interview Date</p>
+                            <p>{report.interviewDate}</p>
+                            <p>Phase</p>
+                            <p>{report.phase}</p>
+                            <p>Status</p>
+                            <p>{report.status}</p>
+                        </Row>
+                    </Col>
+                    <Col>
+                        <p>Notes</p>
+                        <p>{report.note}</p>
+                    </Col>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={onClose}>Close</button>
+                </div>
+            </div>
+        </div>
     )
+
 }
 export default ModalPage;

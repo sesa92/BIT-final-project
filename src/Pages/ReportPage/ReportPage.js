@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Table} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
+import { useLocation } from 'react-router-dom';
 
+
+import './ReportPage.css'
 import ModalPage from '../ModalPage/ModalPage';
 
 
-function ReportPage ({candidate, reports}){
-    const image = "https://image.freepik.com/free-photo/studio-portrait-successful-young-businesswoman_1262-5844.jpg";
+
+function ReportPage (){
+    const [modalConfig, setModalConfig] = useState({isOpen: false, report: null});
+    const [reports, setReports] = useState([]);
+
+    const location = useLocation();
+
+    const candidate = location.state.candidate;
+
     const dateFormatter = (date) => {
         let data = new Date(date);
         let month = data.getMonth();
@@ -14,19 +24,41 @@ function ReportPage ({candidate, reports}){
         let day = data.getDate();
         return `${day}.${month}.${year}`;
     };
+
+    useEffect(() => {
+        // fetch reports for current candidate by id
+        // when reports dat aarrive call setRepoerts function with new data
+    },[]);
+
     return (
-        <container>
+        
+        <>
+            {modalConfig.isOpen ? <ModalPage report={modalConfig.report} onClose={() => setModalConfig({isOpen: false, report: null})} /> : <></>}
             <Row>
                 <Col> 
-                    <Image />
+    
+                    <Image className="img" src={candidate.avatar}alt="Image"rounded />
                 </Col>
                 <Col>
-                    <p>Name: {candidate.name}</p> 
-                    <p>Email: {candidate.email}</p>
+            
+                    <p className="info">Name: </p>
+                   
+                    <p className="data">{candidate.name}</p> 
+                   
+                    <p className="info">Email: </p> 
+                    
+                    <p className="data">{candidate.email}</p> 
+                    
                 </Col>
                 <Col>
-                    <p>Date of birth: {dateFormatter(candidate.birthday)}</p>
-                    <p>Education: {candidate.education}</p>
+                    
+                    <p className="info">Date of birth: </p>
+                    
+                    <p className="data">{dateFormatter(candidate.birthday)}</p>
+                    
+                    <p className="info">Education: </p>
+
+                    <p className="data">{candidate.education}</p>
                 </Col>
             </Row>
             <Table striped bordered hover>
@@ -35,20 +67,19 @@ function ReportPage ({candidate, reports}){
                         <th>Company</th>
                         <th>Interview Date</th>
                         <th>Status</th>
-                        <th></th>
+                       
                     </tr>
                 </thead>
                 <tbody>
-                    {reports.map((e, id) => {
+                    {reports.map((report,index) => {
+                        console.log( report)
                         return (
-                            <tr>
-                                <td>{e.companyName}</td>
-                                <td>{e.interviewDate}</td>
-                                <td>{e.status}</td>
+                            <tr key = {index} >
+                                <td>{report.companyName}</td>
+                                <td>{report.interviewDate}</td>
+                                <td>{report.status}</td>
                                 <td>
-                                    <i class="fal fa-eye" onClick={() => {
-
-                                    }}></i>
+                                    <i class="fal fa-eye" onClick={() => setModalConfig({isOpen: true, report })}></i>
                                 </td>
                             </tr>
                         )
@@ -56,7 +87,7 @@ function ReportPage ({candidate, reports}){
                     }
                 </tbody>
             </Table>
-        </container>
+        </>
     )
 }
 export default ReportPage;
