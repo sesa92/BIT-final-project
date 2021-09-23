@@ -4,7 +4,6 @@ import Image from 'react-bootstrap/Image';
 import { useLocation } from 'react-router-dom';
 
 
-import './ReportPage.css'
 import ModalPage from '../ModalPage/ModalPage';
 
 
