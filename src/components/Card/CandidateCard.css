@@ -1,0 +1,22 @@
+.container {
+  padding: 12px;
+  width: 25%;
+}
+
+.scale {
+  transition: all 0.2s ease-in-out;
+}
+
+.scale:hover {
+  transform: scale(1.02);
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.15);
+}
+
+.card a {
+  color: #111;
+}
+
+a:hover {
+  text-decoration: none;
+}
