@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-//import "./CandidateCard.css";
+import "./CandidateCard.css";
 
 export default function CandidateCard(props) {
   const { id, name, avatar, email } = props.candidate;
