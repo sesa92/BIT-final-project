@@ -64,10 +64,10 @@ function ReportPage ({candidate, reports}){
                         return (
                             <tr key = {index} >
                                 <td>{report.companyName}</td>
-                                <td>{report.interviewDate}</td>
+                                <td>{dateFormatter(report.interviewDate)}</td>
                                 <td>{report.status}</td>
                                 <td>
-                                    <button className="fal fa-eye" onClick={() => setModalConfig({isOpen: true, report })}>Details</button>
+                                    <button className="details" onClick={() => setModalConfig({isOpen: true, report })}>Details</button>
                                 </td>
                             </tr>
                         )

@@ -1,0 +1,15 @@
+.report {
+    margin: 50px;
+  }
+  .info {
+      color:black;
+      font-size: larger;
+  }
+  .data {
+      color:black;
+      font-size: small;
+  }
+  .details{
+      background-color: gray;
+      padding: 3px;
+  }
