@@ -6,6 +6,7 @@ import Image from 'react-bootstrap/Image';
 
 import ModalPage from '../ModalPage/ModalPage';
 
+import "./ReportPage.css";
 
 
 function ReportPage ({candidate, reports}){
@@ -20,13 +21,13 @@ function ReportPage ({candidate, reports}){
     };
     console.log(modalConfig);
     return (
-        
+        <div className="big_div">
         <>
             {modalConfig.isOpen ? <ModalPage report={modalConfig.report} onClose={() => setModalConfig({isOpen: false, report: null})} /> : <></>}
-            <Row>
+            <Row className="candidate">
                 <Col> 
     
-                    <Image className="img" src={candidate.avatar}alt="Image"rounded />
+                    <Image className="img" src={candidate.avatar} alt="Image" rounded />
                 </Col>
                 <Col>
             
@@ -50,7 +51,7 @@ function ReportPage ({candidate, reports}){
                     <p className="data">{candidate.education}</p>
                 </Col>
             </Row>
-            <Table striped bordered hover>
+            <Table className="table" striped bordered hover>
                 <thead>
                     <tr>
                         <th>Company</th>
@@ -76,6 +77,7 @@ function ReportPage ({candidate, reports}){
                 </tbody>
             </Table>
         </>
+        </div>
     )
 }
 export default ReportPage;
