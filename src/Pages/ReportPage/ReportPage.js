@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Row, Col, Table} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
+import avatar from '../../utils/avatar.png'
+import {faEye} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
+
 
 
 
@@ -27,7 +32,7 @@ function ReportPage ({candidate, reports}){
             <Row className="candidate">
                 <Col> 
     
-                    <Image className="img" src={candidate.avatar} alt="Image" rounded />
+                    <Image className="img" src={avatar} alt="Image" rounded />
                 </Col>
                 <Col>
             
@@ -68,7 +73,7 @@ function ReportPage ({candidate, reports}){
                                 <td>{dateFormatter(report.interviewDate)}</td>
                                 <td>{report.status}</td>
                                 <td>
-                                    <button className="details" onClick={() => setModalConfig({isOpen: true, report })}>Details</button>
+                                    <button onClick={() => setModalConfig({isOpen: true, report })}><FontAwesomeIcon icon={faEye}/></button>
                                 </td>
                             </tr>
                         )
