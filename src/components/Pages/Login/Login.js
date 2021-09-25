@@ -53,7 +53,7 @@ class Login extends React.Component {
             <div className="login">
                 <Header title="Login Page" showItems={false} />
                 <div className="loginbox">
-                    <input className="username" type="text" value={this.state.email} onChange={this.emailHandler} placeholder="Email" />
+                    <input className="username" type="text" value={this.state.email} onChange={this.emailHandler} autofocus="autofocus" placeholder="Email" />
                     <input className="pasword" type="password" value={this.state.password} onChange={this.passwordHandler} placeholder="password" />
                     <button className="btn" type="submit" onClick={this.submitHandler}>Login</button>
                    

@@ -1,0 +1,25 @@
+  
+  .info {
+      color:black;
+      font-size: small;
+      font-weight: 700;
+      color: darkslategrey;
+  }
+  .data {
+      color:black;
+      font-size: larger;
+  }
+  button{
+      background-color: lightgrey;
+      padding: 3px;
+  }
+  .table{
+      width: 90%;
+  }
+  .candidate{
+      margin: 40px 10 px 30px;
+  }
+  .big_div{
+      width: 80%;
+      margin: 50px auto;
+  }

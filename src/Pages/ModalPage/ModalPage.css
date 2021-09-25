@@ -1,3 +1,45 @@
 .visibilityFix {
-    display: block !important;
+    display: block !important; 
+    display:block;
+}
+.modal-body .describe {
+    background-color: white;
+    color:black;
+    font-size: larger;
+}
+.modal-body {
+    padding: 30px;
+    display:flex;
+    flex-direction: row;
+}
+.modal-body p {
+    font-size:small;
+    color: black;
+}
+.person {
+    width: 40%;
+}
+.notes {
+    width: 50%;
+}
+.close {
+    visibility: hidden;
+    position: fixed;
+    margin-top: 0px;
+    margin-right: 0px;
+    float: left;
+}
+.p_title{
+    color: gray;    
+    font-weight: 700;
+}
+.col_2{
+    width: 80%;
+    margin: 0 20px 0 30px;
+}
+.go_right{
+    float: right;
+}
+.first_col{
+    width: 30%;
 }
