@@ -1,10 +1,12 @@
-.container {
-  padding: 12px;
+
+.gutter {
+  display: inline-block;
+  padding: 10px;
   width: 25%;
 }
 
 .scale {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .scale:hover {
@@ -15,8 +17,19 @@
 
 .card a {
   color: #111;
+  text-align: center;
 }
 
 a:hover {
   text-decoration: none;
+}
+
+.card-img {
+  position: relative;
+  max-width: 100%;
+}
+
+.text {
+  color: #111;
+  text-align: center;
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import CandidateCard from "../Card/CandidateCard";
+import CandidateCard from "../CandidateCard/CandidateCard";
 import SearchField from "../SearchField/SearchField";
+import NoResult from "../NoResults/NoResults"
 
 function CandidatePage(props) {
   const [searchText, setSearchText] = useState("");
@@ -10,7 +11,14 @@ function CandidatePage(props) {
   const filtered = props.candidates.filter((candidate) =>
     candidate.name.toLowerCase().includes(searchText.trim())
   );
-
+  if (filtered === 0) {
+    return(
+      <div>
+        <SearchField searchText={searchText} setSearchText={setSearchText} />
+        <NoResult />
+      </div>
+    )
+  }
   return (
     <div className="container">
       <SearchField searchText={searchText} setSearchText={setSearchText} />

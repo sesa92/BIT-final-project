@@ -1,16 +1,10 @@
 import React from "react";
 
-function NoResults(props) {
-    const message = () => {
-        if(props.message) {
-            props.message;
-        } else {
-            "Error"}
-        }
+function NoResults() {
 
     return (
         <div className="text center m-5">
-            <h3 className="display-4">{message}</h3>
+            <h3 className="display-4">No results.</h3>
         </div>
     );
 }

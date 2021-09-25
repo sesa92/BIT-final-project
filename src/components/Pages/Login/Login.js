@@ -27,7 +27,7 @@ class Login extends React.Component {
     }
     async submitHandler(event) {
         event.preventDefault();
-        console.log(this.state);
+        //console.log(this.state);
         await this.loginUser(this.state.email, this.state.password);
     }
 
