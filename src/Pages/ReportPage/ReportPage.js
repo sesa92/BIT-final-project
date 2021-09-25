@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Row, Col, Table} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
+import {faEye} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-
-
+import'./ReportPage.css'
 import ModalPage from '../ModalPage/ModalPage';
 
 
@@ -18,15 +19,17 @@ function ReportPage ({candidate, reports}){
         let day = data.getDate();
         return `${day}.${month}.${year}`;
     };
-    console.log(modalConfig);
+
+    console.log(modalConfig)
+
     return (
         
         <>
             {modalConfig.isOpen ? <ModalPage report={modalConfig.report} onClose={() => setModalConfig({isOpen: false, report: null})} /> : <></>}
-            <Row>
+            <Row className="report">
                 <Col> 
     
-                    <Image className="img" src={candidate.avatar}alt="Image"rounded />
+                    <Image className="img" src={''}alt="Image"rounded />
                 </Col>
                 <Col>
             
@@ -49,14 +52,14 @@ function ReportPage ({candidate, reports}){
 
                     <p className="data">{candidate.education}</p>
                 </Col>
-            </Row>
+            </Row><br/><br/>
             <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>Company</th>
                         <th>Interview Date</th>
                         <th>Status</th>
-                        <th>Action</th>
+                      
                     </tr>
                 </thead>
                 <tbody>
@@ -64,10 +67,10 @@ function ReportPage ({candidate, reports}){
                         return (
                             <tr key = {index} >
                                 <td>{report.companyName}</td>
-                                <td>{report.interviewDate}</td>
+                                <td>{dateFormatter(report.interviewDate)}</td>
                                 <td>{report.status}</td>
                                 <td>
-                                    <button className="fal fa-eye" onClick={() => setModalConfig({isOpen: true, report })}>Details</button>
+                                    <button onClick={() => setModalConfig({isOpen: true, report })}><FontAwesomeIcon icon={faEye}/></button>
                                 </td>
                             </tr>
                         )

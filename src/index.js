@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import "@fortawesome/free-solid-svg-icons"
 
 import './index.css';
 

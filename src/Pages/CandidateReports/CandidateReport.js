@@ -54,7 +54,7 @@ function CandidateReport() {
     console.log(candidate, candidateReports);
     return (
         <div>
-            <Header title="Interview Reports" showItems={true} />
+            <Header title="Interview Reports" showItems={true} /><br/><br/><br/>
                 <ReportPage candidate={candidate} reports={candidateReports} />
             <Footer />
 
