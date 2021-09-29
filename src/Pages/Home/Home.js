@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
-import Header from "../../Header/Header.js";
-import Footer from "../../Footer/Footer";
-import { candidates as candidateService } from "../../../service/candidates";
-import CandidatePage from "../../CandidatePage/CandidatePage";
+import Header from "../../components/Header/Header.js";
+import Footer from "../../components/Footer/Footer";
+import { candidates as candidateService } from "../../service/candidates";
+import CandidatePage from "../CandidatePage/CandidatePage";
 import "./Home.css";
 
 function Home() {

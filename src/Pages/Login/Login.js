@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
-import Header from '../../Header/Header';
-import Footer from '../../Footer/Footer';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {

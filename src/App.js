@@ -1,7 +1,7 @@
 import { React, useState } from "react";
-import Home from "./components/Pages/Home/Home";
+import Home from "./Pages/Home/Home";
 import { Route, Switch, useHistory } from "react-router-dom";
-import Login from "./components/Pages/Login/Login";
+import Login from "./Pages/Login/Login";
 import CandidateReport from "./Pages/CandidateReports/CandidateReport";
 
 const App = () => {

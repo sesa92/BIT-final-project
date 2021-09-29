@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import CandidateCard from "../CandidateCard/CandidateCard";
-import SearchField from "../SearchField/SearchField";
-import NoResult from "../NoResults/NoResults"
+import CandidateCard from "../../components/CandidateCard/CandidateCard";
+import SearchField from "../../components/SearchField/SearchField";
+import NoResult from "../../components/NoResults/NoResults"
 
 function CandidatePage(props) {
   const [searchText, setSearchText] = useState("");
